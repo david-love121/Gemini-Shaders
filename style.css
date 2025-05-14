@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #000; /* Optional: background for behind canvas */
+}
+canvas {
+    display: block; /* Remove extra space below canvas */
+}
+#uiContainer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#menuToggle {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 45px; /* Fixed width for the button */
+    height: 45px; /* Fixed height for the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#menuToggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#controlPanel {
+    background-color: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    width: 250px;
+    transform: translateX(110%); /* Initially off-screen */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+#controlPanel.open {
+    transform: translateX(0);
+}
+.panel-content label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+.panel-content input[type="color"],
+.panel-content input[type="range"] {
+    width: calc(100% - 10px);
+    margin-bottom: 10px;
+}
+.panel-content input[type="color"] {
+    height: 30px;
+    padding: 0 2px; /* Small padding for color input */
+}
+.panel-content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+.panel-content button:hover {
+    background-color: #666;
+}
