@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "scripts": {
+ "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "lint": "eslint ."
-  },
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d dist" 
+  }, 
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "three": "^0.176.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
