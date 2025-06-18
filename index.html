@@ -11,6 +11,33 @@
         <button id="menuToggle">☰</button>
         <div id="controlPanel">
             <div class="panel-content">
+                <label for="renderMode">Render Mode:</label>
+                <select id="renderMode">
+                    <option value="2d">2D Shader</option>
+                    <option value="3d">3D Shader Toy</option>
+                </select>
+
+                <div id="simulation-selector" style="display: none;">
+                    <label for="simulationType">3D Simulation:</label>
+                    <select id="simulationType">
+                        <option value="raymarching">Raymarching Spheres</option>
+                        <option value="fractal">3D Fractal</option>
+                        <option value="noise">3D Noise Field</option>
+                        <option value="galaxy">Galaxy Spiral</option>
+                    </select>
+                    
+                    <div id="fractal-options" style="display: none;">
+                        <label for="fractalType">Fractal Type:</label>
+                        <select id="fractalType">
+                            <option value="mandelbulb">Mandelbulb</option>
+                            <option value="mandelbox">Mandelbox</option>
+                            <option value="julia">Julia Set 3D</option>
+                            <option value="burning_ship">Burning Ship 3D</option>
+                            <option value="tricorn">Tricorn 3D</option>
+                        </select>
+                    </div>
+                </div>
+
                 <label for="primaryColor">Primary Color:</label>
                 <input type="color" id="primaryColor" value="#2196f3"> <!-- Default: Blue -->
 
@@ -20,7 +47,15 @@
                 <label for="animationSpeed">Speed: <span id="speedValue">1.0</span></label>
                 <input type="range" id="animationSpeed" min="0.1" max="3" step="0.1" value="1.0">
 
+                <label for="bloomIntensity">Bloom: <span id="bloomValue">1.0</span></label>
+                <input type="range" id="bloomIntensity" min="0.0" max="3.0" step="0.1" value="1.0">
+
+                <label for="metallicness">Metallic: <span id="metallicValue">0.7</span></label>
+                <input type="range" id="metallicness" min="0.0" max="1.0" step="0.05" value="0.7">
+
                 <button id="randomizeButton">Randomize Pattern</button>
+                <button id="randomizeColorsButton">Randomize Colors</button>
+                <button id="cycleColorsButton">Auto-Cycle Colors</button>
             </div>
         </div>
     </div>

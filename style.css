@@ -56,13 +56,27 @@ canvas {
     font-size: 0.9em;
 }
 .panel-content input[type="color"],
-.panel-content input[type="range"] {
+.panel-content input[type="range"],
+.panel-content select {
     width: calc(100% - 10px);
     margin-bottom: 10px;
 }
 .panel-content input[type="color"] {
     height: 30px;
     padding: 0 2px; /* Small padding for color input */
+}
+.panel-content select {
+    height: 30px;
+    padding: 5px;
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.panel-content select:focus {
+    outline: none;
+    border-color: #888;
 }
 .panel-content button {
     width: 100%;
